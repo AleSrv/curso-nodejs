@@ -1,0 +1,75 @@
+Resumen de Lecciones Vistas - Semana 01
+=========================================
+
+Este es un resumen de los conceptos y ejercicios cubiertos hasta ahora.
+
+---
+
+### 01. Fundamentos de Node.js
+- **Hola Mundo (`01-hola-mundo`):**
+  - Ejecución de un script de JavaScript simple con Node.js (`node app.js`).
+  - Concepto básico del entorno de ejecución de Node.js.
+
+- **Módulos Nativos (`02-os-info`):**
+  - Importación de módulos nativos de Node.js (ej: `const os = require('os');`).
+  - Uso del módulo `os` para obtener información del sistema operativo (arquitectura, memoria, etc.).
+
+---
+
+### 02. Módulo `fs` (File System)
+- **Lectura de Archivos Asíncrona (Callbacks) (`03-fs-readfile`):**
+  - Uso de `fs.readFile` con una función de callback para manejar el resultado (datos o error).
+  - Entendimiento del modelo asíncrono de Node.js.
+
+- **Promesas en `fs` (`04-fs-promises`):**
+  - Uso del módulo `fs/promises` para trabajar con Promesas en lugar de callbacks.
+  - Manejo de resultados con `.then()` y errores con `.catch()`.
+
+- **Async/Await con `fs` (`05-fs-async-await`):**
+  - Uso de `async/await` para escribir código asíncrono que parece síncrono, mejorando la legibilidad.
+  - Uso de bloques `try...catch` para el manejo de errores.
+
+- **CRUD de Archivos (`06-fs-crud`):**
+  - Realización de operaciones básicas de archivos:
+    - **C**reate (Crear): `fs.writeFile`
+    - **R**ead (Leer): `fs.readFile`
+    - **U**pdate (Actualizar): `fs.appendFile`
+    - **D**elete (Borrar): `fs.unlink`
+
+---
+
+### 03. Módulos `path` y `http`
+- **Módulo `path` (`07-path-module`):**
+  - Herramientas para trabajar con rutas de archivos y directorios de forma independiente del sistema operativo.
+  - Métodos clave: `path.join`, `path.basename`, `path.extname`.
+
+- **Servidor Básico con `http` (`08-http-server`):**
+  - Creación de un servidor web desde cero usando el módulo `http`.
+  - `http.createServer` para manejar peticiones (`req`) y respuestas (`res`).
+  - Manejo de diferentes rutas (`req.url`) y métodos (`req.method`).
+  - Envío de respuestas con `res.end()` y establecimiento de códigos de estado (`res.statusCode`).
+
+- **Servidor de Archivos Estáticos (`09-static-files`):**
+  - Ampliación del servidor `http` para leer y servir archivos estáticos (HTML, CSS, JS).
+  - Uso de `fs` para leer el archivo solicitado.
+  - Establecimiento del `Content-Type` correcto en las cabeceras de la respuesta para que el navegador interprete el archivo correctamente.
+
+---
+
+### 04. Express.js
+- **Introducción a Express (`10-express-basic`):**
+  - Inicialización de un proyecto de Node.js con `npm init -y`.
+  - Instalación de paquetes externos (frameworks) con `npm install express`.
+  - Creación de un servidor básico con Express, mucho más simple que con el módulo `http`.
+  - Definición de rutas con `app.get()`.
+  - Manejo de rutas no encontradas (404).
+
+- **Middleware en Express (`11-express-middleware`):**
+  - Concepto de "middleware": funciones que se ejecutan en medio del ciclo de petición-respuesta.
+  - El orden de los middleware es crucial.
+  - Uso de `next()` para pasar el control al siguiente middleware.
+  - **Ejemplos de Middleware:**
+    - **Logging:** Middleware personalizado para registrar cada petición.
+    - **`express.json()`:** Middleware incorporado para parsear el cuerpo de las peticiones JSON.
+    - **`express.static()`:** Middleware incorporado para servir archivos estáticos de una carpeta (`public`) de forma automática.
+    - **Manejo de 404:** Middleware al final de la cadena para capturar cualquier petición no manejada.

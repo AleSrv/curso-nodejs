@@ -1,0 +1,30 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    color: #004d40;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #00796b;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+button {
+    background-color: #00897b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00695c;
+}
